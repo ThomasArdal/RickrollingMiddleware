@@ -1,7 +1,7 @@
 # RickrollingMiddleware
 
 ![CI](https://github.com/ThomasArdal/RickrollingMiddleware/workflows/CI/badge.svg)
-![Nuget](https://img.shields.io/nuget/v/RickrollingMiddleware)
+[![Nuget](https://img.shields.io/nuget/v/RickrollingMiddleware)](https://www.nuget.org/packages/RickrollingMiddleware/)
 
 This package implements a piece of ASP.NET Core middleware, rick rolling anyone requesting invalid URLs. The code is inspired by this tweet:
 
