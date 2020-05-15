@@ -9,7 +9,13 @@ This package implements a piece of ASP.NET Core middleware, rick rolling anyone 
 
 ## Usage
 
-Call the `UseRickrolling()` method in the `Configure` method:
+Install the `RickrollingMiddleware` NuGet package:
+
+```powershell
+PM> Install-Package RickrollingMiddleware
+```
+
+Call `UseRickrolling` in the `Configure` method:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
