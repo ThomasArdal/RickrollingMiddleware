@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>This package implements a piece of ASP.NET Core middleware, rick rolling anyone requesting invalid URLs.</Description>
+    <Authors>ThomasArdal</Authors>
+    <AssemblyName>RickrollingMiddleware</AssemblyName>
+    <PackageId>RickrollingMiddleware</PackageId>
+    <PackageTags>aspnetcore;middleware;rickroll</PackageTags>
+    <PackageIconUrl>https://pa1.narvii.com/6543/1cc43a342a90136e3c7da42fa7fac557b4c41738_128.gif</PackageIconUrl>
+    <RepositoryUrl>https://github.com/ThomasArdal/RickrollingMiddleware</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
