@@ -28,6 +28,11 @@ jobs:
       
       - name: Build solution and generate NuGet package
         run: dotnet pack -c Release -o out
-    
+
       - name: Push to nuget.org
-        run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/RickrollingMiddleware/RickrollingMiddleware.csproj
+          TAG_COMMIT: "false"
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
