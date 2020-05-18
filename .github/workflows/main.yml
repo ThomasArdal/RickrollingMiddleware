@@ -30,9 +30,5 @@ jobs:
         run: dotnet pack -c Release -o out
 
       - name: Push to nuget.org
-        uses: rohith/publish-nuget@v2
-        with:
-          PROJECT_FILE_PATH: src/RickrollingMiddleware/RickrollingMiddleware.csproj
-          TAG_COMMIT: "false"
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        run: dotnet pack -c Release -o out /p:Version=1.0.$GITHUB_RUN_NUMBER
 
