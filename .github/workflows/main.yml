@@ -32,6 +32,9 @@ jobs:
       - name: debug output
         run: echo ${{ github.ref }}
 
-      - name: Push to nuget.org
-        run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      - name: debug event name
+      run: echo ${{ github.event_name }}
+
+      # - name: Push to nuget.org
+      #   run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
     
