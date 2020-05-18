@@ -27,14 +27,7 @@ jobs:
         uses: actions/setup-dotnet@v1
       
       - name: Build solution and generate NuGet package
-        run: dotnet pack -c Release -o out /p:Version=1.0.$GITHUB_RUN_NUMBER
+        run: dotnet pack -c Release -o out
 
-      - name: debug output
-        run: echo ${{ github.ref }}
-
-      - name: debug event name
-      run: echo ${{ github.event_name }}
-
-      # - name: Push to nuget.org
-      #   run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
-    
+      - name: Push to nuget.org
+        run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
