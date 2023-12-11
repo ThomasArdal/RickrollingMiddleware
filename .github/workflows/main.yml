@@ -29,6 +29,12 @@ jobs:
       - name: Build solution and generate NuGet package
         run: dotnet pack -c Release -o out /p:Version=1.0.$GITHUB_RUN_NUMBER
 
+      - name: Install dotnet-validate
+        run: dotnet tool install --global dotnet-validate --version 0.0.1-preview.304
+
+      - name: Validate NuGet package
+        run: dotnet-validate package local out/*.nupkg
+    
       - name: Push to nuget.org
         run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
         if: ${{ github.event_name == 'push' }}
